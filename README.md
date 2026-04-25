@@ -60,7 +60,7 @@ Este proyecto está bajo la Licencia **MIT** - consulta el archivo [LICENSE](LIC
 
 | Feed (Clima y Hora) | Rejilla de Apps | Multitarea (Switcher) |
 | :---: | :---: | :---: |
-| ![Feed](https://via.placeholder.com/200x400?text=Feed+Screen) | ![Grid](https://via.placeholder.com/200x400?text=App+Grid) | ![Switcher](https://via.placeholder.com/200x400?text=Switcher) |
+| ![Feed]([https://via.placeholder.com/200x400?text=Feed+Screen](https://raw.githubusercontent.com/diego9393/Meego-Launcher/refs/heads/main/capturas/notificaciones.jpg)) | ![Grid]([https://via.placeholder.com/200x400?text=App+Grid](https://raw.githubusercontent.com/diego9393/Meego-Launcher/refs/heads/main/capturas/apps.jpg)) | ![Switcher]([https://via.placeholder.com/200x400?text=Switcher](https://raw.githubusercontent.com/diego9393/Meego-Launcher/refs/heads/main/capturas/multitarea.jpg)) |
 
 ---
 

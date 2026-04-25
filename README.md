@@ -24,7 +24,7 @@
 
 | Feed (Clima y Hora) | Rejilla de Apps | Multitarea (Switcher) |
 | :---: | :---: | :---: |
-| ![Feed](https://raw.githubusercontent.com/diego9393/Meego-Launcher/refs/heads/main/app/src/main/fastlane/metadata/android/en-US/images/notificaciones.jpg) | ![Grid](https://raw.githubusercontent.com/diego9393/Meego-Launcher/refs/heads/main/app/src/main/fastlane/metadata/android/en-US/images/apps.jpg) | ![Switcher](https://raw.githubusercontent.com/diego9393/Meego-Launcher/refs/heads/main/app/src/main/fastlane/metadata/android/en-US/images/multitarea.jpg) |
+| ![Feed](https://raw.githubusercontent.com/diego9393/Meego-Launcher/refs/heads/main/fastlane/metadata/android/en-US/images/notificaciones.jpg) | ![Grid](https://raw.githubusercontent.com/diego9393/Meego-Launcher/refs/heads/main/fastlane/metadata/android/en-US/images/apps.jpg) | ![Switcher](https://raw.githubusercontent.com/diego9393/Meego-Launcher/refs/heads/main/fastlane/metadata/android/en-US/images/multitarea.jpg) |
 
 ---
 

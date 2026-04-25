@@ -7,9 +7,10 @@
 
 ---
 
-## ✨ Características principaless
+## ✨ Características principales
 
-* **Interfaz de 3 Paneles:** * **Feed:** Reloj estilo MeeGo, clima en tiempo real (vía Open-Meteo) y notificaciones unificadas.
+* **Interfaz de 3 Paneles:**
+    * **Feed:** Reloj estilo MeeGo, clima en tiempo real (vía Open-Meteo) y notificaciones unificadas.
     * **App Grid:** Rejilla de aplicaciones altamente personalizable (3 a 6 columnas).
     * **Switcher:** Gestor de aplicaciones recientes para una multitarea real.
 * **Gestos Intuitivos:** Swipe vertical para invocar un **Dock dinámico** desde cualquier pantalla.
@@ -19,10 +20,18 @@
 
 ---
 
+## 📸 Capturas de pantalla
+
+| Feed (Clima y Hora) | Rejilla de Apps | Multitarea (Switcher) |
+| :---: | :---: | :---: |
+| ![Feed](https://raw.githubusercontent.com/diego9393/Meego-Launcher/refs/heads/main/capturas/notificaciones.jpg) | ![Grid](https://raw.githubusercontent.com/diego9393/Meego-Launcher/refs/heads/main/capturas/apps.jpg) | ![Switcher](https://raw.githubusercontent.com/diego9393/Meego-Launcher/refs/heads/main/capturas/multitarea.jpg) |
+
+---
+
 ## 🚀 Instalación
 
 ### GitHub
-1. Ve a la sección de [Releases](https://github.com/TU_USUARIO/MeeGo-Launcher/releases).
+1. Ve a la sección de [Releases](https://github.com/diego9393/MeeGo-Launcher/releases).
 2. Descarga el último APK disponible.
 3. Instala en tu dispositivo (asegúrate de permitir la instalación desde orígenes desconocidos).
 
@@ -53,14 +62,6 @@ Este proyecto está construido con las últimas tecnologías de Android:
 ## 📜 Licencia
 
 Este proyecto está bajo la Licencia **MIT** - consulta el archivo [LICENSE](LICENSE) para más detalles.
-
----
-
-## 📸 Capturas de pantalla
-
-| Feed (Clima y Hora) | Rejilla de Apps | Multitarea (Switcher) |
-| :---: | :---: | :---: |
-| ![Feed](https://via.placeholder.com/200x400?text=Feed+Screen) | ![Grid](https://via.placeholder.com/200x400?text=App+Grid) | ![Switcher](https://via.placeholder.com/200x400?text=Switcher) |
 
 ---
 

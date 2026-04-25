@@ -21,9 +21,6 @@
 
 ## 🚀 Instalación
 
-### F-Droid
-Próximamente disponible en el repositorio oficial de F-Droid.
-
 ### GitHub
 1. Ve a la sección de [Releases](https://github.com/TU_USUARIO/MeeGo-Launcher/releases).
 2. Descarga el último APK disponible.

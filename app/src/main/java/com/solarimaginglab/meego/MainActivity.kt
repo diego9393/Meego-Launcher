@@ -1,12 +1,16 @@
 package com.solarimaginglab.meego
 
+import android.Manifest
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
+import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectVerticalDragGestures
 import androidx.compose.foundation.layout.*
@@ -34,6 +38,18 @@ class MainActivity : ComponentActivity() {
                 val pagerState = rememberPagerState(pageCount = { 3 }, initialPage = 1)
                 val context = LocalContext.current
 
+                // --- Lógica de Permisos de Notificaciones (Android 13+) ---
+                val permissionLauncher = rememberLauncherForActivityResult(
+                    ActivityResultContracts.RequestPermission()
+                ) { isGranted -> /* Manejar respuesta si se desea */ }
+
+                LaunchedEffect(Unit) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                        permissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+                    }
+                }
+
+                // --- Estados ---
                 var currentPack by remember { mutableStateOf(utils.getSelectedIconPack()) }
                 var gridColumns by remember { mutableIntStateOf(utils.getGridColumns()) }
                 var dockSize by remember { mutableIntStateOf(utils.getDockSize()) }
@@ -81,10 +97,17 @@ class MainActivity : ComponentActivity() {
                     MeeGoDock(isDockVisible, dockSize, { isDockVisible = false }, { utils.launchApp(it); isDockVisible = false }, { utils.removeDockApp(it) })
 
                     if (showSettings) {
-                        SettingsDialog(gridColumns, dockSize, { showSettings = false }, { utils.saveIconPack(it); currentPack = it }, { utils.saveGridColumns(it); gridColumns = it }, { utils.saveDockSize(it); dockSize = it })
+                        SettingsDialog(
+                            gridColumns,
+                            dockSize,
+                            { showSettings = false },
+                            { utils.saveIconPack(it); currentPack = it },
+                            { utils.saveGridColumns(it); gridColumns = it },
+                            { utils.saveDockSize(it); dockSize = it }
+                        )
                     }
 
-                    // --- DIÁLOGO DE ACCIONES MODIFICADO ---
+                    // --- Diálogo de Acciones (Asignar Dock / Info App) ---
                     if (selectedAppActions != null) {
                         AlertDialog(
                             onDismissRequest = { selectedAppActions = null },
@@ -109,22 +132,37 @@ class MainActivity : ComponentActivity() {
 
                                     HorizontalDivider(Modifier.padding(vertical = 12.dp), color = Color.DarkGray)
 
-                                    // NUEVO: ABRIR INFO DE APP PARA DESINSTALAR
+                                    // BOTÓN INFO APP (Para Desinstalar o activar Notificaciones)
                                     Button(
                                         onClick = {
                                             val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
                                                 data = Uri.fromParts("package", selectedAppActions!!.packageName, null)
                                             }
                                             context.startActivity(intent)
-
                                             selectedAppActions = null
-                                            // Al volver de ajustes, refrescamos por si la ha borrado
                                             refreshTrigger++
                                         },
                                         modifier = Modifier.fillMaxWidth(),
                                         colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF444444))
                                     ) {
                                         Text("Info de la Aplicación", color = Color.White)
+                                    }
+
+                                    Spacer(Modifier.height(8.dp))
+
+                                    // EXTRA: BOTÓN PARA ACCESO ESPECIAL A NOTIFICACIONES (Solo si es para el Feed)
+                                    if (selectedAppActions!!.packageName == context.packageName) {
+                                        Button(
+                                            onClick = {
+                                                val intent = Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)
+                                                context.startActivity(intent)
+                                                selectedAppActions = null
+                                            },
+                                            modifier = Modifier.fillMaxWidth(),
+                                            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2E7D32))
+                                        ) {
+                                            Text("Activar Escucha de Notificaciones", color = Color.White)
+                                        }
                                     }
                                 }
                             },

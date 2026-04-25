@@ -1,0 +1,1 @@
+Lanzador de aplicaciones inspirado en la interfaz del Nokia N9 (MeeGo).

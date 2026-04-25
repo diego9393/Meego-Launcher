@@ -1,7 +1,7 @@
-Un lanzador ligero y elegante desarrollado con Jetpack Compose que revive la experiencia del Nokia N9 (MeeGo Harmattan).
+A lightweight and elegant launcher developed with Jetpack Compose that revives the Nokia N9 (MeeGo Harmattan) experience.
 
-Características principales:
-- Tres paneles clásicos: Feed de notificaciones/clima, Rejilla de aplicaciones y Switcher.
-- Diseño minimalista y fluido.
-- Desarrollado con tecnologías modernas de Android.
-- Basado en el Solar Imaging Lab design.
+Key Features:
+- Three classic panels: Notifications/Weather feed, App grid, and Switcher.
+- Minimalist and fluid design.
+- Developed with modern Android technologies.
+- Based on the Solar Imaging Lab design.
